@@ -1,11 +1,9 @@
-import { useContext, useState, useEffect } from "react";
-import { UserContext } from "../contexts/user.context";
+import { useState, useEffect } from "react";
 import axios from "../config/axios";
 import { useNavigate } from "react-router-dom";
 
 export default function Home() {
   const navigate = useNavigate();
-  const { user } = useContext(UserContext);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [projectName, setProjectName] = useState("");
@@ -50,9 +48,11 @@ export default function Home() {
         </button>
         {projects.map((project) => (
           <div
-            onClick={() => navigate('/project', {
-              state: { project },
-            })}
+            onClick={() =>
+              navigate("/project", {
+                state: { project },
+              })
+            }
             key={project._id}
             className="flex flex-col justify-center gap-2 p-4 border border-slate-300 rounded-md cursor-pointer min-w-52 hover:bg-slate-300"
           >

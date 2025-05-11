@@ -1,10 +1,4 @@
-import {
-  useCallback,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { useCallback, useContext, useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "../config/axios";
 import {
@@ -149,8 +143,9 @@ export default function Project() {
       <section className="left relative flex flex-col h-full min-w-96 bg-slate-300">
         <header className="flex justify-between p-2 px-4 w-full bg-slate-100">
           <div className="flex items-center font-bold text-lg">
-            <button className="flex items-center cursor-pointer"
-            onClick={() =>  navigate('/')}
+            <button
+              className="flex items-center cursor-pointer"
+              onClick={() => navigate("/")}
             >
               <i className="ri-arrow-left-s-line text-2xl"></i>
             </button>
